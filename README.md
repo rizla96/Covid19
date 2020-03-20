@@ -1,5 +1,5 @@
-# Covid19
-Applicazione per l'estrazione automatica delle informazioni sul covid-19.
+# Covid-19
+Applicazione per l'estrazione automatica delle informazioni sul covid-19 come il numero totale di contagiati, di morti di ricoverati.
 ## Requisiti
 **python3**
 
