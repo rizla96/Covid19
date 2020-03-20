@@ -98,5 +98,5 @@ with open('casiNazione.csv', 'r') as csvfile:
 
             except mysql.connector.Error as error:
                 print("Failed to insert record into urlht table {}".format(error))
-        line_count += 1
+        line_count += 1        
 exit('estrazione finita')
