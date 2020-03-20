@@ -22,3 +22,5 @@ Scaricare il driver per la vostra versione di Google Chrome da questo link https
 - Importare la struttura del database utilizzando il file `DBstruttura.sql`, creando così il DB (verificare che non sia presente un omonimo DB).
 - Modificare il file `config.ini` secondo le proprie credenziali.
 - Eseguire il file `InfoCovid.py` inserendo in input: **-n** seguito dalla nazione(in lingua inglese) desiderata.
+**Esempio: python InfoCovid.py -n italy**
+![InfoCovidGen](https://user-images.githubusercontent.com/51764993/77183499-b6266c00-6ace-11ea-87d6-8d7704562037.png)
