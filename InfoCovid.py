@@ -11,6 +11,7 @@ import datetime
 import re
 import csv
 import argparse
+import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-n", type=str, help="seleziona la nazione per la quale estrarre i dati es: italy")
@@ -98,5 +99,15 @@ with open('casiNazione.csv', 'r') as csvfile:
 
             except mysql.connector.Error as error:
                 print("Failed to insert record into urlht table {}".format(error))
-        line_count += 1        
+        line_count += 1
+if args.n:
+    NazioneScelta = args.n
+    mycursor = connection.cursor()
+    mycursor.execute("SELECT * FROM casinazione where Nazione = %s", (NazioneScelta,))
+    res = mycursor.fetchall()
+    mycursor.close()
+    for i in res:
+        plt.suptitle(args.n +', '+str(i[10]))
+        plt.bar(['Casi Totali', 'Morti', 'Ricoverati', 'Casi Attivi', 'Critici'],[i[2], i[4], i[6], i[7],i[8]])
+        plt.show()
 exit('estrazione finita')
