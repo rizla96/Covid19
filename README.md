@@ -26,3 +26,4 @@ Scaricare il driver per la vostra versione di Google Chrome da questo link https
 ![InfoCovid](https://user-images.githubusercontent.com/51764993/77183963-6005f880-6acf-11ea-903e-143ff04ad559.png)
 oppure eseguirlo senza valori in input per estrarre le informazioni da tutte le nazioni.
 ![InfoCovidGen](https://user-images.githubusercontent.com/51764993/77183833-3b118580-6acf-11ea-8cab-750ff8475896.png)
+Nel caso decidiate di estrarre per una specifica nazione verrà mostrati dei grafici riassuntivi per la nazione scelta.
