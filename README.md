@@ -27,6 +27,6 @@ Scaricare il driver per la vostra versione di Google Chrome da questo link https
 oppure eseguirlo senza valori in input per estrarre le informazioni da tutte le nazioni.
 ![InfoCovidGen](https://user-images.githubusercontent.com/51764993/77183833-3b118580-6acf-11ea-8cab-750ff8475896.png)
 Nel caso decidiate di estrarre per una specifica nazione verrà mostrati dei grafici riassuntivi per la nazione scelta.
-- Eseguire il file `plot.py` inserendo in input: **-n** seguito dalla nazione(in lingua inglese) desiderata, verrano cosi mostrati dei grafici riassuntivi.
+- Eseguire il file `plot.py` inserendo in input: **-n** seguito dalla nazione(in lingua inglese) desiderata, verrano cosi mostrati dei grafici riassuntivi con i dati estratti dal DB riempito dal lavoro del precedente programma.
 **Esempio: python plot.py -n italy**
 ![plot](https://user-images.githubusercontent.com/51764993/77228953-1c70c480-6b8b-11ea-8222-aed96b0a3776.png)
