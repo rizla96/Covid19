@@ -12,6 +12,7 @@ import re
 import csv
 import argparse
 import matplotlib.pyplot as plt
+import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-n", type=str, help="seleziona la nazione per la quale estrarre i dati es: italy")
@@ -103,11 +104,31 @@ with open('casiNazione.csv', 'r') as csvfile:
 if args.n:
     NazioneScelta = args.n
     mycursor = connection.cursor()
-    mycursor.execute("SELECT * FROM casinazione where Nazione = %s", (NazioneScelta,))
+    mycursor.execute("SELECT * FROM casinazione where Nazione = %s order by ID desc LIMIT 3", (NazioneScelta,))
     res = mycursor.fetchall()
     mycursor.close()
+    colors = ['b','g','r']
+    z=0
+    c=0
+    barWidth = 0.25
+    r1 = np.arange(5)
+    r2 = [x + barWidth for x in r1]
+    r3 = [x + barWidth for x in r2]
+
+    r=[r1,r2,r3]
     for i in res:
-        plt.suptitle(args.n +', '+str(i[10]))
-        plt.bar(['Casi Totali', 'Morti', 'Ricoverati', 'Casi Attivi', 'Critici'],[i[2], i[4], i[6], i[7],i[8]])
-        plt.show()
+        bars1 = [i[2], i[4], i[6], i[7],i[8]]
+        plt.suptitle(args.n)
+        plt.bar(r[z], bars1, color=colors[z], width=barWidth, edgecolor='white', label=str(i[10]))
+        if z==2:
+            z = 0
+        else:
+            z = z + 1
+
+
+    plt.xticks([r + barWidth for r in range(len(bars1))], ['Casi Totali', 'Morti', 'Ricoverati', 'Casi Attivi', 'Critici'])
+
+    plt.legend()
+    plt.show()
+
 exit('estrazione finita')
