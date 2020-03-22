@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import argparse
 import numpy as np
 parser = argparse.ArgumentParser()
-parser.add_argument("-n", type=str, help="seleziona la nazione per la quale estrarre i dati es: italy")
+parser.add_argument("-n", type=str, required= True, help="seleziona la nazione per la quale estrarre i dati es: italy")
 args = parser.parse_args()
 
 config = configparser.ConfigParser()
@@ -31,7 +31,7 @@ except:
     exit('impossibile stabilire connessione al DB')
 NazioneScelta = args.n
 mycursor = mydb.cursor()
-mycursor.execute("SELECT * FROM casinazione where Nazione = %s order by ID desc LIMIT 3", (NazioneScelta,))
+mycursor.execute("SELECT * FROM casinazione where Nazione = %s order by ID asc LIMIT 3", (NazioneScelta,))
 res = mycursor.fetchall()
 mycursor.close()
 colors = ['b','g','r']

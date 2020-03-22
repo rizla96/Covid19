@@ -104,7 +104,7 @@ with open('casiNazione.csv', 'r') as csvfile:
 if args.n:
     NazioneScelta = args.n
     mycursor = connection.cursor()
-    mycursor.execute("SELECT * FROM casinazione where Nazione = %s order by ID desc LIMIT 3", (NazioneScelta,))
+    mycursor.execute("SELECT * FROM casinazione where Nazione = %s order by ID asc LIMIT 3", (NazioneScelta,))
     res = mycursor.fetchall()
     mycursor.close()
     colors = ['b','g','r']
